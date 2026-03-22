@@ -1,0 +1,9 @@
+
+--- uname -a ---
+Linux PRIYANSHU 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+--- uptime ---
+ 19:55:30 up  1:47,  2 users,  load average: 0.02, 0.05, 0.02
+
+--- whoami ---
+priyanshu
