@@ -1,3 +1,5 @@
+env/
+logs/
+devices.txt
 __pycache__/
 *.pyc
-env/
