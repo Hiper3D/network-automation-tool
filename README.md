@@ -1,44 +1,41 @@
-# 💻 Automated Fleet Management Tool: Source Code
+# 🚀 Enterprise Network Automation Pipeline
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-# Network Automation Tool
+## 📌 System Overview
 
-A Python-based SSH automation tool that connects to Linux systems using key-based authentication, executes commands remotely, and stores outputs in structured log files.
+This repository contains a modular, Python-driven network automation pipeline designed to streamline the administration of distributed infrastructure. By leveraging cryptographic SSH [Secure Shell: A cryptographic network protocol for operating network services securely over an unsecured network] key-based authentication, the tool securely connects to multiple Linux environments to execute automated system commands. 
 
-## Features
-- SSH key-based authentication
-- Multi-device support through a config file
-- Automated command execution
-- Per-device logging
-- Clean and scalable project structure
+This project demonstrates real-world automation patterns heavily utilized in modern DevOps, Cloud Engineering, and System Administration workflows, replacing manual CLI [Command-Line Interface: A text-based user interface used to interact with software and operating systems] operations with a scalable, code-driven approach.
 
-## Tech Stack
-- Python 3
-- Paramiko
-- Linux / WSL
+## ⚙️ Core Engineering Features
 
-## Project Structure
-- `src/` — application code
-- `config/` — device and command files
-- `logs/` — command outputs
-- `requirements.txt` — Python dependencies
+* **Zero-Trust Authentication:** Implements secure SSH [Secure Shell: A cryptographic network protocol for operating network services securely over an unsecured network] key-based authentication, entirely eliminating the need for hardcoded or plaintext passwords.
+* **Decoupled Infrastructure as Code:** Supports multi-device targeting via an external configuration matrix (`config/devices.local.txt`), ensuring the core codebase remains independent of the deployment environment.
+* **Modular Execution Engine:** Dynamically ingests target commands from `config/commands.txt`, enabling rapid pivoting of operational tasks without altering script logic.
+* **Structured Telemetry & Auditing:** Features a per-device logging subsystem that captures standard output, timestamps, and execution metadata, providing an immutable audit trail for all remote operations.
 
-## Usage
-1. Create and activate a virtual environment
-2. Install dependencies
-3. Add your machine details to `config/devices.local.txt`
-4. Add commands to `config/commands.txt`
-5. Run:
+## 🛠️ Technology Stack & Environment
 
-```bash
-python src/main.py
+* **Programming Language:** Python 3.x
+* **Core Libraries:** Paramiko (Provides native Python bindings for the SSH2 [Secure Shell 2: The second, more secure version of the SSH network protocol] protocol)
+* **Operating Environment:** Linux / WSL [Windows Subsystem for Linux: A compatibility layer for running Linux binary executables natively on Windows]
+* **Version Control:** Git & GitHub
 
-##Security
-Uses SSH key authentication
-Real device details are ignored by Git using .gitignore
-#Author
+## 📂 Project Architecture
 
-Priyanshu Patra
+```text
+network-automation-tool/
+├── src/
+│   ├── main.py              # Application entry point and orchestrator
+│   ├── ssh_runner.py        # Core logic for SSH connections and remote execution
+│   └── config_loader.py     # File I/O operations for parsing inventory and commands
+├── config/
+│   ├── devices.example.txt  # Template for fleet inventory setup
+│   └── commands.txt         # Execution payload definitions
+├── logs/                    # Centralized directory for structured telemetry
+├── requirements.txt         # Python dependency definitions
+├── .gitignore               # Excludes sensitive logs, configs, and environments
+└── README.md                # Project documentation
